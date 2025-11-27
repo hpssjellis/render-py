@@ -1,6 +1,7 @@
 from flask import Flask, request
 
-app = Flask(__name__)
+# The Flask application object must be available at the top level
+app = Flask(__name__) 
 MAGIC_WORD = 'fred'
 
 @app.route('/', methods=['GET', 'POST'])
@@ -38,5 +39,7 @@ def index():
     """
     return html_content
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# --- REMOVE THIS BLOCK FOR PRODUCTION DEPLOYMENT ---
+# if __name__ == '__main__':
+#     app.run(debug=True)
+# ----------------------------------------------------
