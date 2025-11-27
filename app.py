@@ -7,7 +7,7 @@ MAGIC_WORD = 'fred'
 @app.route('/', methods=['GET', 'POST'])
 def index():
     # Default message when first loading the page (GET request)
-    result = "<span style='color:red'> Try the magic word</span>"
+    result = "<span style='color:red'> Try the magic word 'fred'</span>"
     
     # Logic for handling form submission (POST request)
     if request.method == 'POST':
@@ -17,7 +17,7 @@ def index():
         if my_input == MAGIC_WORD:
             result = "<b style='color:green'> Cool! </b>"
         else:
-            result = "<span style='color:red'> Try the magic word</span>"
+            result = "<span style='color:red'> Try the magic word 'fred'</span>"
 
     # HTML template with the dynamic result
     html_content = f"""
@@ -27,7 +27,7 @@ def index():
         <title>Browser Title</title>
     </head>
     <body>
-        <h3 align=center>T2A06-python-codesandbox</h3>
+        <h3 align=center>Render-python-submit</h3>
         <form action="/" method="post">
             <label for="myText01">Enter Text:</label>
             <input type="text" id="myText01" name="myText01">
